@@ -1,0 +1,4 @@
+﻿  main.c
+C:\Users\hamad\Desktop\fall22\os\lab\lab os\lab os\main.c(71,11): warning C4013: 'memcpy' undefined; assuming extern returning int
+C:\Users\hamad\Desktop\fall22\os\lab\lab os\lab os\main.c(150): warning C4716: 'write_data': must return a value
+  lab os.vcxproj -> C:\Users\hamad\Desktop\fall22\os\lab\lab os\Debug\lab os.exe

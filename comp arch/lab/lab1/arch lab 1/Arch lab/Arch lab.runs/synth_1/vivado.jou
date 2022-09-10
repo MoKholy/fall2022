@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Tue Sep  6 16:07:51 2022
+# Process ID: 11232
+# Current directory: C:/Users/ArchLab/Arch lab/Arch lab.runs/synth_1
+# Command line: vivado.exe -log inverter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inverter.tcl
+# Log file: C:/Users/ArchLab/Arch lab/Arch lab.runs/synth_1/inverter.vds
+# Journal file: C:/Users/ArchLab/Arch lab/Arch lab.runs/synth_1\vivado.jou
+# Running On: CSE-P07-2168-35, OS: Windows, CPU Frequency: 3600 MHz, CPU Physical cores: 4, Host memory: 34225 MB
+#-----------------------------------------------------------
+source inverter.tcl -notrace

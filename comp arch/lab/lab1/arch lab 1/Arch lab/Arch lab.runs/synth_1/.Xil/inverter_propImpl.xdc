@@ -1,0 +1,5 @@
+set_property SRC_FILE_INFO {cfile:{C:/Users/ArchLab/Arch lab/Arch lab.srcs/constrs_1/new/conn.xdc} rfile:{../../../Arch lab.srcs/constrs_1/new/conn.xdc} id:1} [current_design]
+set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
+set_property package_pin J15 [get_ports v]
+set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
+set_property package_pin H17 [get_ports u]
