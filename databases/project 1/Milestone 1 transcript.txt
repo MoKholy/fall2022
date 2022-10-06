@@ -1,0 +1,91 @@
+﻿Transcript for SQL:
+
+
+CREATE DATABASE IF NOT EXISTS properties_db;
+USE properties_db;
+CREATE TABLE Broker_Co(
+    company_id INTEGER not null,
+    address VARCHAR(50) not null,
+    email VARCHAR(255) not null,
+    name VARCHAR(50) not null,
+    PRIMARY KEY (company_id)
+);
+
+
+CREATE TABLE Development_Proj(
+    project_id INTEGER not null,
+    name VARCHAR(100) not null,
+    city VARCHAR(25) not null,
+    area VARCHAR(50) not null,
+    description_dev VARCHAR(255),
+    PRIMARY KEY(project_id)
+);
+
+
+CREATE TABLE User(
+    user_id INTEGER not null,
+    first_name VARCHAR(25) not null,
+    last_name VARCHAR(25) not null,
+    area_focus VARCHAR(100) not null,
+    birth_date DATE not null,
+    phone_no INTEGER not null, 
+    email VARCHAR(255) not null,
+    address VARCHAR(50) not null,
+    PRIMARY KEY(user_id)
+);
+
+
+CREATE TABLE Agent(
+    agent_id INTEGER not null,
+    company_id INTEGER,
+    first_name VARCHAR(25) not null,
+    last_name VARCHAR(25) not null,
+    phone_no INTEGER not null,
+    email VARCHAR(255) not null,
+    PRIMARY KEY (agent_id),
+    FOREIGN KEY(company_id) REFERENCES Broker_Co(company_id)
+);
+
+
+CREATE TABLE Review(
+    review_id INTEGER not null,
+    user_id INTEGER not null,
+    agent_id INTEGER not null,
+    rating INTEGER not null,
+    description_rev VARCHAR(255) not null,
+    PRIMARY KEY(review_id),
+    FOREIGN KEY(user_id) REFERENCES User(user_id),
+    FOREIGN KEY(agent_id) REFERENCES Agent(agent_id),
+    CONSTRAINT CHK_RATING CHECK (rating BETWEEN 1 and 10)
+);
+
+
+CREATE TABLE Property(
+        property_id INTEGER not null,
+        num_rooms INTEGER not null, 
+        property_size INTEGER not null,
+        num_bathrooms INTEGER not null,
+        price INTEGER not null,
+        payment_method VARCHAR(11) not null,
+        property_type VARCHAR(20) not null,
+        city VARCHAR(20) not null,
+        area VARCHAR(25) not null,
+        address VARCHAR(50) not null,
+        down_payment INTEGER not null,
+        project_id INTEGER,
+        agent_id INTEGER not null,
+        description_prop VARCHAR(255),
+        PRIMARY KEY(property_id),
+        FOREIGN KEY(agent_id) REFERENCES Agent(agent_id),
+        FOREIGN KEY(project_id) REFERENCES Development_Proj(project_id)
+);
+
+
+CREATE TABLE Amenities(
+    property_id INTEGER not null,
+    amenity_name VARCHAR(25) not null,
+    PRIMARY KEY(property_id, amenity_name),
+    FOREIGN KEY(property_id) REFERENCES Property(property_id)
+
+
+);
